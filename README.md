@@ -22,7 +22,6 @@ Requirements = HAS_SINGULARITY == True && TARGET.GLIDEIN_ResourceName =!= MY.Mac
 
 executable = freesurfer-wrapper.sh
 transfer_input_files = license.txt, sub-THP0001_ses-THP0001UCI1_run-01_T1w.nii.gz
-#transfer_output_files = output.txt
 
 error = job.$(Cluster).$(Process).error
 output = job.$(Cluster).$(Process).output
