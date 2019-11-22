@@ -1,6 +1,6 @@
-# osgvo-neuroimaging
+# osgvo-freesurfer
 
-OSG VO's container for neuroimaging applications. Currently the image contains:
+OSG VO's container for the FreeSurfer application. Currently the image contains:
 
  - FreeSurver 6.0.1
 
@@ -18,7 +18,7 @@ The following example job has three files: `job.submit`, `freesurfer-wrapper.sh`
 ```
 
 Requirements = HAS_SINGULARITY == True && TARGET.GLIDEIN_ResourceName =!= MY.MachineAttrGLIDEIN_ResourceName1 && TARGET.GLIDEIN_ResourceName =!= MY.MachineAttrGLIDEIN_ResourceName2 && TARGET.GLIDEIN_ResourceName =!= MY.MachineAttrGLIDEIN_ResourceName3 && TARGET.GLIDEIN_ResourceName =!= MY.MachineAttrGLIDEIN_ResourceName4
-+SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-neuroimaging:latest/"
++SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-freesurfer:latest/"
 
 executable = freesurfer-wrapper.sh
 transfer_input_files = license.txt, sub-THP0001_ses-THP0001UCI1_run-01_T1w.nii.gz
