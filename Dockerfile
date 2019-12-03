@@ -15,7 +15,6 @@ RUN cd /opt && \
     --exclude='freesurfer/subjects/fsaverage6' \
     --exclude='freesurfer/subjects/cvs_avg35' \
     --exclude='freesurfer/subjects/cvs_avg35_inMNI152' \
-    --exclude='freesurfer/subjects/bert' \
     --exclude='freesurfer/subjects/V1_average' \
     --exclude='freesurfer/average/mult-comp-cor' \
     --exclude='freesurfer/lib/cuda' \
