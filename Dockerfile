@@ -3,25 +3,10 @@ FROM opensciencegrid/osgvo-el7:latest
 # deps
 RUN yum -y install \
       tcsh
+      https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.0.0-beta/freesurfer-CentOS7-7.0.0-0.1.b1.x86_64.rpm
 
-# FreeSurfer 6.0.1 - note symlink to license file coming with the job
-RUN cd /opt && \
-    wget -qO- https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.1/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz | tar zxv --no-same-owner -C /opt \
-    --exclude='freesurfer/trctrain' \
-    --exclude='freesurfer/subjects/fsaverage_sym' \
-    --exclude='freesurfer/subjects/fsaverage3' \
-    --exclude='freesurfer/subjects/fsaverage4' \
-    --exclude='freesurfer/subjects/fsaverage5' \
-    --exclude='freesurfer/subjects/fsaverage6' \
-    --exclude='freesurfer/subjects/cvs_avg35' \
-    --exclude='freesurfer/subjects/cvs_avg35_inMNI152' \
-    --exclude='freesurfer/subjects/V1_average' \
-    --exclude='freesurfer/average/mult-comp-cor' \
-    --exclude='freesurfer/lib/cuda' \
-    --exclude='freesurfer/lib/qt' \
-    && \
-    mv freesurfer freesurfer-6.0.1 && \
-    ln -s /srv/license.txt /opt/freesurfer-6.0.1/license.txt
+# note symlink to license file coming with the job
+RUN ln -s /srv/license.txt /usr/local/freesurfer/7.0.0-0.1.b1/license.txt
 
 COPY setup.sh /opt/setup.sh
 
