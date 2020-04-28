@@ -3,7 +3,7 @@
 # source this file to get the environment set up
 
 # FreeSurfer
-export FREESURFER_HOME=/opt/freesurfer-6.0.1
+export FREESURFER_HOME=/opt/freesurfer-6.0.0
 export MNI_DIR=$FREESURFER_HOME/mni
 export LOCAL_DIR=$FREESURFER_HOME/local
 export FSFAST_HOME=$FREESURFER_HOME/fsfast

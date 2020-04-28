@@ -4,9 +4,9 @@ FROM opensciencegrid/osgvo-el7:latest
 RUN yum -y install \
       tcsh
 
-# FreeSurfer 6.0.1 - note symlink to license file coming with the job
+# FreeSurfer 6.0.0 - note symlink to license file coming with the job
 RUN cd /opt && \
-    wget -qO- https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.1/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz | tar zxv --no-same-owner -C /opt \
+    wget -qO- https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.0/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0.tar.gz | tar zxv --no-same-owner -C /opt \
     --exclude='freesurfer/trctrain' \
     --exclude='freesurfer/subjects/fsaverage_sym' \
     --exclude='freesurfer/subjects/fsaverage3' \
@@ -20,8 +20,8 @@ RUN cd /opt && \
     --exclude='freesurfer/lib/cuda' \
     --exclude='freesurfer/lib/qt' \
     && \
-    mv freesurfer freesurfer-6.0.1 && \
-    ln -s /srv/license.txt /opt/freesurfer-6.0.1/license.txt
+    mv freesurfer freesurfer-6.0.0 && \
+    ln -s /srv/license.txt /opt/freesurfer-6.0.0/license.txt
 
 COPY setup.sh /opt/setup.sh
 
