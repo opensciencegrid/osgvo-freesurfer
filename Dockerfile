@@ -2,7 +2,7 @@ FROM opensciencegrid/osgvo-el7:latest
 
 # deps
 RUN yum -y install \
-      tcsh
+      tcsh \
       https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.0.0-beta/freesurfer-CentOS7-7.0.0-0.1.b1.x86_64.rpm
 
 # note symlink to license file coming with the job
