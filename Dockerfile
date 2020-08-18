@@ -1,5 +1,11 @@
 FROM opensciencegrid/osgvo-el7:latest
 
+LABEL opensciencegrid.name="FreeSurfer"
+LABEL opensciencegrid.description="A software package for the analysis and visualization of structural and functional neuroimaging data from cross-sectional or longitudinal studies"
+LABEL opensciencegrid.url="https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki"
+LABEL opensciencegrid.category="Tools"
+LABEL opensciencegrid.definition_url="https://github.com/opensciencegrid/osgvo-freesurfer"
+
 # deps
 RUN yum -y install \
       tcsh
@@ -24,6 +30,8 @@ RUN cd /opt && \
     ln -s /srv/license.txt /opt/freesurfer-6.0.0/license.txt
 
 COPY setup.sh /opt/setup.sh
+
+COPY labels.json /.singularity.d/
 
 # build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
