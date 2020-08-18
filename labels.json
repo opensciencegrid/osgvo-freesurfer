@@ -1,0 +1,7 @@
+{
+    "opensciencegrid.name": "FreeSurfer",
+    "opensciencegrid.description": "A software package for the analysis and visualization of structural and functional neuroimaging data from cross-sectional or longitudinal studies",
+    "opensciencegrid.url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki",
+    "opensciencegrid.category": "Tools",
+    "opensciencegrid.definition_url": "https://github.com/opensciencegrid/osgvo-freesurfer"
+}
