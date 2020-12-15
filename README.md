@@ -2,7 +2,10 @@
 
 OSG VO's container for the FreeSurfer application. Currently the image contains:
 
+ - FreeSurver 7.1.1
+ - FreeSurver 7.0.0
  - FreeSurver 6.0.1
+ - FreeSurver 6.0.0
 
 ## FreeSurfer Workflow
 

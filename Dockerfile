@@ -9,11 +9,13 @@ LABEL opensciencegrid.definition_url="https://github.com/opensciencegrid/osgvo-f
 # deps
 RUN yum -y install \
       tcsh \
-      https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.0.0/freesurfer-CentOS7-7.0.0-1.x86_64.rpm
+      https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-CentOS7-7.1.1-1.x86_64.rpm && \
+    yum clean -y all && \
+    rm -rf /var/tmp/yum*
 
 # note symlink to license file coming with the job
 RUN ls -l /usr/local/freesurfer/ && \
-    ln -s /srv/license.txt /usr/local/freesurfer/7.0.0-1/license.txt
+    ln -s /srv/license.txt /usr/local/freesurfer/7.1.1-1/license.txt
 
 COPY setup.sh /opt/setup.sh
 
